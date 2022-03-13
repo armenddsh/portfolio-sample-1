@@ -1,0 +1,141 @@
+:root {
+  --light-grayish-blue: hsl(200, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 90%);
+  --grayish-blue: hsl(233, 8%, 62%);
+  --bright-cyan: hsl(192, 70%, 51%);
+  --lime-green: hsl(136, 65%, 51%);
+  --dark-blue: hsl(233, 26%, 24%);
+  --white: hsl(0, 0%, 100%);
+
+  --px: 20px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+html {
+  font-family: "Public Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+img,
+span,
+svg {
+  display: block;
+}
+
+.container {
+  max-width: 1444px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: var(--white);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar-toogle-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 20px;
+}
+
+.navbar-toogle-btn span {
+  display: block;
+  width: 25px;
+  height: 1px;
+  background: var(--dark-blue);
+  transition: 0.25s ease;
+}
+
+.navbar-toogle-btn.active .one {
+  transform: rotate(45deg) translateY(3px);
+}
+
+.navbar-toogle-btn.active .two {
+  display: none;
+}
+
+.navbar-toogle-btn.active .three {
+  transform: rotate(-45deg) translateY(-3px);
+}
+
+.navbar-nav {
+  position: fixed;
+  top: 68px;
+  left: 28px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+  border-radius: 5px;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.5s ease;
+  pointer-events: none;
+  background-color: var(--white);
+}
+
+.navbar-nav a {
+  color: var(--dark-blue);
+  display: block;
+}
+
+.navbar-nav.active {
+  top: calc(60px + 20px);
+  opacity: 1;
+  box-shadow: 0 0 100px 100px hsla(233, 26%, 24%, 0.2);
+  pointer-events: all;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--lime-green), var(--bright-cyan));
+  color: var(--white);
+  padding: 15px 30px;
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  margin: auto;
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+}
+
+.navbar .btn-primary {
+  display: none;
+}
